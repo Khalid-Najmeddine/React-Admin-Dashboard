@@ -3,7 +3,7 @@ import "./DataTable.scss"
 import { Link } from "react-router-dom"
 
 type Props = {
-  dataTableColumns: GridColDef[],
+  dataTableColumns: GridColDef[]
   dataTableRows: object[]
   slug: string
 }
@@ -43,7 +43,7 @@ const DataTable = (props:Props) => {
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: 10,
             },
           },
         }}

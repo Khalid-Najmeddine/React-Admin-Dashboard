@@ -7,6 +7,8 @@ import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 import Login from "./pages/Login/Login";
 import "./styles/Global.scss";
+import SingleUser from "./pages/SingleUser/SingleUser";
+import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 function App() {
 
@@ -34,7 +36,9 @@ function App() {
       children: [
         {path: "/", element: <Home/>},
         {path: "/users", element: <Users/>},
-        {path: "/products", element: <Products/>}
+        {path: "/products", element: <Products/>},
+        {path: "/users/:id", element: <SingleUser/>},
+        {path: "/products/:id", element: <SingleProduct/>}
       ]
     },
     {path:"/login", element: <Login/>}
