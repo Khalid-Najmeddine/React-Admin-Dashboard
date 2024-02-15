@@ -9,6 +9,9 @@ import Login from "./pages/Login/Login";
 import "./styles/Global.scss";
 import SingleUser from "./pages/SingleUser/SingleUser";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
 
@@ -21,7 +24,9 @@ function App() {
             <Menu/>
           </div>
           <div className="content-Container">
-            <Outlet/>
+            <QueryClientProvider client={queryClient}>
+              <Outlet/>
+            </QueryClientProvider>
           </div>
         </div>
         <Footer/>

@@ -4,6 +4,7 @@ import "./Users.scss";
 import { userRows } from "../../data";
 import { useState } from "react";
 import AddNew from "../../components/AddNew/AddNew";
+// import { useQuery } from "@tanstack/react-query";
 
 const dataTableColumns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -30,6 +31,16 @@ const Users = () => {
     setOpenModal(true);
   };
 
+  // TEST THE API
+
+  // const { isLoading, data } = useQuery({
+  //   queryKey: ["allusers"],
+  //   queryFn: () =>
+  //     fetch("http://localhost:8800/api/users").then(
+  //       (res) => res.json()
+  //     ),
+  // });
+
   return (
     <div className="users">
       <div className="info">
@@ -37,6 +48,7 @@ const Users = () => {
         <button onClick={handleOpenModal}>Add New User</button>
       </div>
       <DataTable slug="users" dataTableColumns={dataTableColumns} dataTableRows={userRows}/>
+      {/* {isLoading ? ("Loading...") : (<DataTable slug="users" dataTableColumns={dataTableColumns} dataTableRows={data}/>)} */}
       { openModal && ( <AddNew slug="user" dataTableColumns={dataTableColumns} setOpenModal={setOpenModal}/> )}
     </div>
   );

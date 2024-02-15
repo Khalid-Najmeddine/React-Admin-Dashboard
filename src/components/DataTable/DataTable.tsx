@@ -12,7 +12,7 @@ const DataTable = (props:Props) => {
 
   const handleDelete = (id:number) => {
     //dele the item
-    //axios.delete(`/api/${props.slug}/${id}`)
+
     console.log(id + " has been deleted!")
   }
 
